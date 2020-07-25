@@ -47,55 +47,6 @@ $^3$ UCL Centre for Blockchain Technologies, University College London, London, 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%% Insert the texts which can accomdate on firstpage in the tag "fmtext" %%%%%
-
-% \begin{fmtext}
-% \section{Insert A head here}
-% %%%% Insert A head here
-
-% This demo file is intended to serve as a ``starter file''
-% for rsproca journal papers produced under \LaTeX\ using
-% rsproca.cls v1.5e.
-
-% \subsection{Insert B head here}
-% %%%% Insert B head here
-% Subsection text here.
-
-% \subsubsection{Insert C head here}
-% %%%% Insert C head here
-% Subsubsection text here.
-
-% \section{Equations}
-
-% Sample equations. \cite{1}\cite{1,2} \cite{1,2,3}
-
-% %%% Numbered equation
-% \begin{align}\label{1.1}
-% \begin{split}
-% \frac{\partial u(t,x)}{\partial t} &= Au(t,x) \left(1-\frac{u(t,x)}{K}\right)-B\frac{u(t-\tau,x) w(t,x)}{1+Eu(t-\tau,x)},\\
-% \frac{\partial w(t,x)}{\partial t} &=\delta \frac{\partial^2w(t,x)}{\partial x^2}-Cw(t,x)+D\frac{u(t-\tau,x)w(t,x)}{1+Eu(t-\tau,x)},
-% \end{split}
-% \end{align}
-
-% \begin{align}\label{1.2}
-% \begin{split}
-% \frac{dU}{dt} &=\alpha U(t)(\gamma -U(t))-\frac{U(t-\tau)W(t)}{1+U(t-\tau)},\\
-% \frac{dW}{dt} &=-W(t)+\beta\frac{U(t-\tau)W(t)}{1+U(t-\tau)}.
-% \end{split}
-% \end{align}
-
-% %%%% Unnumbered equation
-% \begin{eqnarray}
-% \frac{\partial(F_1,F_2)}{\partial(c,\omega)}_{(c_0,\omega_0)} = \left|
-% \begin{array}{ll}
-% \frac{\partial F_1}{\partial c} &\frac{\partial F_1}{\partial \omega} \\\noalign{\vskip3pt}
-% \frac{\partial F_2}{\partial c}&\frac{\partial F_2}{\partial \omega}
-% \end{array}\right|_{(c_0,\omega_0)}\notag\\
-% =-4c_0q\omega_0 -4c_0\omega_0p^2 =-4c_0\omega_0(q+p^2)>0.
-% \end{eqnarray}
-% \end{fmtext}
-
-%%%%%%%%%%%%%%% End of first page %%%%%%%%%%%%%%%%%%%%%
 
 \maketitle
 
@@ -106,7 +57,7 @@ $^3$ UCL Centre for Blockchain Technologies, University College London, London, 
 
   In modern portfolio theory, investors commonly calculate correlations between asset types to construct portfolios aiming to maximise their return at a given level of risk \cite{markowitz1952portfolio}. In the search for excess returns, quantitative approaches are often exploited to detect predictive signals across time series. This may be considered as a field of price discovery, which represents a large and fundamental area of financial theory. In the ideal case {with complete predictive information, from knowing the movement of one price, the movement of a second can be inferred exactly. In reality information is incomplete and held asymmetrically, and the ability to reliably obtain this and contribute to price formation is generally rewarded by the market. In this paper we explore the effectiveness of two promising techniques for detecting information transfer between time series, applying these to identify causal signals between alternative data and cryptocurrency price returns. 
 
-  The concept of an entirely peer-to-peer digital currency managed via a distributed ledger was described and applied by Nakamoto in 2008 \cite{nakamoto2008bitcoin}, who named the currency `Bitcoin'. The proposal and subsequent implementation captured the attention of technologists, economists, libertarians and futurists, and spawned numerous adaptations utilising the blockchain technology \cite{aste2017blockchain}, which have come to be known as cryptocurrencies. Trading in these cryptocurrencies has become widely available even to less sophisticated retail investors, and volumes have grown significantly as interest in the currencies has widened. The crypto market is characterised by high volatility which seems to reflect changes in the attitudes of investors. The usage of cryptocurrencies in the traditional economy remains limited, and it is reasonable to assume that prices are in part driven by speculative dynamics, separate to any utility as a medium of exchange or to any revenue-generating process. %Therefore one should expect to observe a larger interplay between sentiment and prices in cryptocurrencies, compared to more fundamental-driven markets such as equities. 
+  The concept of an entirely peer-to-peer digital currency managed via a distributed ledger was described and applied by Nakamoto in 2008 \cite{nakamoto2008bitcoin}, who named the currency `Bitcoin'. The proposal and subsequent implementation captured the attention of technologists, economists, libertarians and futurists, and spawned numerous adaptations utilising the blockchain technology \cite{aste2017blockchain}, which have come to be known as cryptocurrencies. Trading in these cryptocurrencies has become widely available even to less sophisticated retail investors, and volumes have grown significantly as interest in the currencies has widened. The crypto market is characterised by high volatility which seems to reflect changes in the attitudes of investors. The usage of cryptocurrencies in the traditional economy remains limited, and it is reasonable to assume that prices are in part driven by speculative dynamics, separate to any utility as a medium of exchange or to any revenue-generating process.  
   One factor which contributes to these dynamics is market sentiment, the estimation of which using social media data is an active area of research.  We discuss existing literature that identifies signals between social sentiment data and equity prices, and so hypothesise that investor sentiment on future cryptocurrency prices may be expected to feed into the short-term price movements via speculation, which may be detected through the usage of information-theoretic techniques. This paper tests this hypothesis. 
 
   The relationship between social media sentiment and price changes has been explored in the literature for traditional markets and, more recently, for crypto markets as well, including by an author of this paper. For instance, Bollen et al.  \cite{bollen2011twitter} showed that the mood of Twitter messages can be used as a proxy for market sentiment, and that this can show a linear relationship with price movements in US equities. Zheludev \& Aste \cite{zheludev2014can} also performed sentiment analysis using Natural Language Processing (NLP) on Twitter data, to show sentiment is significantly coupled with price movements for a number of instruments issued by S\&P500 firms. Souza \& Aste  used Twitter messages to model market sentiment, and showed the non-linear predictive relationship may be greater than the linear one \cite{souza2016nonlinear}. 
@@ -172,9 +123,7 @@ where $p(x)$ is the probability density function.
 $H(x)$ is termed the differential entropy, and it quantifies the uncertainty on the continuous variable $X$. It is an extension of the Shannon entropy for continuous variables. 
 In this definition there is an arbitrary additive constant that takes into account the scale factor for the variable $x$, which in this paper we set to zero.
 This arbitrary sale factor is a fundamental problem in the definition of Shannon entropy for continuous variables. 
-%Indeed, the probability density function $p(x)$ depends on the scale of $x$ and the term $\log p(x)$ should have the probability density function $p(x)$ divided by a scale factor, which in turns introduces the additive constant. 
-%In quantum mechanics this problem was solved introducing the Plank length as universal scale factor. 
-%In general, outside physical systems, this scale factor rests arbitrary.
+
 However, in the calculation of mutual information and  transfer entropy, these constant factors cancel out, and results are independent of scale.
 For discrete variables, where the integral becomes a sum, the constant is equal to zero. Using a logarithm of base 2, the entropy value quantifies the minimum number of bits necessary to encode the signal. 
 
@@ -186,7 +135,6 @@ For discrete variables, where the integral becomes a sum, the constant is equal 
   \end{eqnarray}
 Which is the uncertainty on variable $Y$ residual from taking in account all information on variable $X$. 
 
-  %Where two random variables share information, the mutual information is given by:
  The information shared between two variables $X$ and $Y$ is the mutual information:
   \begin{eqnarray}
     \label{eq:mutual_information}
@@ -337,9 +285,9 @@ Interestingly, to compute relative entropy measures such as mutual information o
     \caption{Demonstration that the non-linear causal relationship in synthetic data generated from equations \ref{eq:coupled_map} and \ref{eq:g(x)} is correctly detected only by the non-linear method. The plots are calculated from the mean over 10 realisations over 15,000 data points of the synthetic coupled logistic map process, with $\epsilon = 0.4$. Non-linear transfer entropy is calculated using a histogram of 6 classes per dimension, partitioned using marginal equiquantisation. The Z-score for each result is also plotted for both methods. In the direction $X \rightarrow Y$, the classical approach is unable to detect the known dependency of Y on X, whilst detecting small spurious signals. By contrast the information-theoretic approach correctly identifies the relationship.  We note that for $\alpha>0.2$ the information-theoretic method detects information transfer in the other direction. This is observed to increase as $\alpha$ approaches $1$, and corresponds to an expected non-linear anticipatory signal.
     }
     \label{fig:CLM_confirmation}
-    %\vspace{-35pt} % Add this to rightsize the float and let it fit on a page
+    
   \end{figure*}
-  %\clearpage
+
 
   \subsection{Decay of Causal Signals with Lag Length}
   As a final validation exercise, we explore the performance of the methods in detecting signals in coupled time series when the lag of the relationship is unknown. In general, it is expected that causal links should be strongest at time-lags closest to the true signal lag, and gradually decay as the time-lag considered is increased. However, the complexity of causative relationships, particularly where any feedback exists between the time series, suggests that there could also be multi-modal causalities, operating at different lags.  
@@ -354,12 +302,10 @@ Interestingly, to compute relative entropy measures such as mutual information o
     
   \end{figure*}
   
-  We observe the identification of the correct lag of the causal signal, which is marked by peaks at lag equal to the true lag $L=6$ of the causal relationship, and zero elsewhere. %The Z-score is much greater for the linear technique, but both methods are successful in detecting the causal coupling and the specific lead-lag period.  
-  
-  %Secondly, a non-zero transfer entropy observed in the decoupled case with $\alpha=0$. Notably this result is shown to be insignificant, with Z-scores roughly zero for all lags. This presents a baseline transfer entropy in this case, which might be offset against the results in the causal case $\alpha=0.1$; we note that the Effective Transfer Entropy measure could perform better in such cases, where subtracting the average zero-causality transfer entropy would give a better estimate of the true information transfer \cite{Marschinski2002}. 
+  We observe the identification of the correct lag of the causal signal, which is marked by peaks at lag equal to the true lag $L=6$ of the causal relationship, and zero elsewhere. 
 
 
-%\clearpage
+
 \section{Results with Real Data} \label{s.results}
   Having confirmed that the information-theoretic approach is able to detect both linear and non-linear causalities, we apply the technique to investigate the effect of changes in social media sentiment on cryptocurrency returns, and vice versa. We also apply the linear method, and compare estimates from both techniques to establish whether linear or non-linear dynamics dominate the observed causal relationship.
 
@@ -377,7 +323,7 @@ Interestingly, to compute relative entropy measures such as mutual information o
 
   XRP, in Fig. \ref{fig:XRP_TE}, shows a clear non-linear causality from sentiment to returns, with a significant but smaller causal relationship also in the opposite direction. The mean net transfer entropy is measured for this period as $0.0022$ bits. The signal is more significant from sentiment to returns, and especially in the periods ending in 2018. 
   
-  ETH, in Fig. \ref{fig:ETH_TE}, shows an interesting and unique behaviour. In particular, there appears to be, initially, a significant signal which collapses in the windows ending around January 2018. The information transfer at its initial peak is greater from returns to sentiment, however over the whole period the effect is more bidirectional, with mean net transfer entropy of zero. This suggests a slight phase change, with sentiment driving returns after the collapse of the signal, although no net significance is observed after this point in either direction. This strongly indicates another driving mechanism, the effect of which first becomes present around January 2016 (due to 24-month windows). This effect is likely to be associated with the rapid price movements at the time.  %\cite{Ethereum} 
+  ETH, in Fig. \ref{fig:ETH_TE}, shows an interesting and unique behaviour. In particular, there appears to be, initially, a significant signal which collapses in the windows ending around January 2018. The information transfer at its initial peak is greater from returns to sentiment, however over the whole period the effect is more bidirectional, with mean net transfer entropy of zero. This suggests a slight phase change, with sentiment driving returns after the collapse of the signal, although no net significance is observed after this point in either direction. This strongly indicates another driving mechanism, the effect of which first becomes present around January 2016 (due to 24-month windows). This effect is likely to be associated with the rapid price movements at the time.  
   
   \begin{figure*}[!htbp]
     \includegraphics[width=\linewidth]{images/BTC.pdf}
