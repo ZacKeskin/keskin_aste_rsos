@@ -104,7 +104,7 @@ $^3$ UCL Centre for Blockchain Technologies, University College London, London, 
 
   Causality is a central concept in natural sciences, commonly understood to describe where a process, evolving in time, has some observable effect on a second process. However, the nature of this causative effect is challenging to describe and quantify with precision. There is a long history in determining whether some change truly causes another \cite{hume1738treatise,pearl2009causality}, especially when the relationship is not deterministic, and is observed only in aggregate. In this paper, we consider a statistical form of causality, which can be observed in co-dependent time series where a response in the dependent series is more likely to follow after some change in the driving series. The direction of information transfer is forced by requiring the cause to precede the effect. This concept was conceived first by Wiener in 1956 \cite{Wiener}, and formalised by Granger in 1969 \cite{granger1969investigating} who was subsequently awarded the Nobel memorial prize in economics for his work on the analysis of time series. In simplest terms, the so-called Granger causality describes the extent to which a given series is better able to be predicted by consideration of the information in prior values of another series. If the response in the dependent series scales as a linear multiple of the driving signal, this relationship is described as a linear coupling. If, instead, the response follows some other function of the signal, the relationship is non-linear.
 
-  In modern portfolio theory, investors commonly calculate correlations between asset types to construct portfolios aiming to maximise their return at a given level of risk \cite{markowitz1952portfolio}. In the search for excess returns, quantitative approaches are often exploited to detect predictive signals across time series. {\color{blue} This may be considered as a field of price discovery, which represents a large and fundamental area of financial theory.} In the ideal case {with complete predictive information, \color{blue}from} knowing the movement of one price, the movement of a second can be inferred {\color{blue} exactly. In reality information is incomplete and held asymmetrically, and the ability to reliably obtain this and contribute to price discovery is often well rewarded}. In this paper we explore the effectiveness of two promising techniques for detecting information transfer between time series, applying these to identify causal signals between alternative data and cryptocurrency {\color{blue} price returns}. 
+  In modern portfolio theory, investors commonly calculate correlations between asset types to construct portfolios aiming to maximise their return at a given level of risk \cite{markowitz1952portfolio}. In the search for excess returns, quantitative approaches are often exploited to detect predictive signals across time series. {\color{blue} This may be considered as a field of price discovery, which represents a large and fundamental area of financial theory.} In the ideal case {with complete predictive information, \color{blue}from} knowing the movement of one price, the movement of a second can be inferred {\color{blue} exactly. In reality information is incomplete and held asymmetrically, and the ability to reliably obtain this and contribute to price formation is generally rewarded by the market}. In this paper we explore the effectiveness of two promising techniques for detecting information transfer between time series, applying these to identify causal signals between alternative data and cryptocurrency {\color{blue} price returns}. 
 
   The concept of an entirely peer-to-peer digital currency managed via a distributed ledger was described and applied by Nakamoto in 2008 \cite{nakamoto2008bitcoin}, who named the currency `Bitcoin'. The proposal and subsequent implementation captured the attention of technologists, economists, libertarians and futurists, and spawned numerous adaptations utilising the blockchain technology \cite{aste2017blockchain}, which have come to be known as cryptocurrencies. Trading in these cryptocurrencies has become widely available even to less sophisticated retail investors, and volumes have grown significantly as interest in the currencies has widened. The crypto market is characterised by high volatility which seems to reflect changes in the attitudes of investors. The usage of cryptocurrencies in the traditional economy remains limited, and it is reasonable to assume that prices are in part driven by speculative dynamics, separate to any utility as a medium of exchange or to any revenue-generating process. %Therefore one should expect to observe a larger interplay between sentiment and prices in cryptocurrencies, compared to more fundamental-driven markets such as equities. 
   {\color{blue} One factor which contributes to these dynamics is market sentiment, the estimation of which using social media data is an active area of research}.  We discuss existing literature that identifies signals between social sentiment {\color{blue} data} and equity prices, and so hypothesise that investor sentiment on future cryptocurrency prices may be expected to feed into the short-term price movements via speculation, which may be detected {\color{blue} through the usage of} information-theoretic techniques. This paper tests this hypothesis. 
@@ -418,7 +418,7 @@ The significance tests confirm the existence of causally-coupled relationships, 
 
 \section{Appendix}
 
- \subsection{Estimate of mutual information and transfer entropy from relative frequencies}
+ \subsection{Estimate{\color{blue}s} of Mutual Information and Transfer Entropy from Relative Frequencies}
  In order to compute the mutual information or the transfer entropy, we must estimate entropies from Eq.\ref{eq:entropy}.
  The histogram approach discretises the continuous sample space by partitioning it into bins that - in general - are not assumed to be of equal size, and so transforms the integral into a sum.
   \begin{eqnarray}
@@ -530,13 +530,10 @@ This quantity depends on the relative volumes of the bins, and hence do the esti
     \caption{Table of average Z-scores across all windows of observation for each currency. We observe nonlinear values generally an order of magnitude greater than the linear values, with the exception of LTC for which we see relatively large linear components. However the nonlinear transfer entropy remains considerably larger than the linear values even for LTC.}
     
     \begin{tabular}{lrrrr}
-      {} & {} & ({\color{blue} returns} $\rightarrow$ Sentiment) & {} & (Sentiment $\rightarrow$ {\color{blue} returns})  \\
+      {} & {} & ({\color{blue} Returns} $\rightarrow$ Sentiment) & {} & (Sentiment $\rightarrow$ {\color{blue} Returns})  \\
       {} & Linear  &  NonLinear  &  Linear  &  Nonlinear  \\
       \hline 
-      % BTC &     0.1 &     2.0 &        5.1 &        7.6 \\
-      % LTC &     2.2 &    11.8 &       22.4 &       17.3 \\
-      % XRP &     4.1 &     0.4 &       24.1 &       14.4 \\
-      % ETH &    -0.6 &     0.5 &        6.5 &        6.8 \\
+
       BTC &     0.1 &       5.1 &       2.0 &        7.6 \\
       LTC &     2.2 &      22.4 &      11.8 &       17.3 \\
       XRP &     4.1 &      24.1 &       0.4 &       14.4 \\
@@ -549,14 +546,21 @@ This quantity depends on the relative volumes of the bins, and hence do the esti
   \pagebreak
 
 %%%%%%%%%% Acknowledgements etc. %%%%%%%%%%%%%%
-
+  \clearpage
   \vskip10pc
 
-  \dataccess{Social sentiment Data was provided courtesy of PsychSignal, and may be made available pending request to the authors.}
+  \ethics{In this manuscript, there are no data or topics that need ethical approval.}
+
+  \dataccess{The source code and data can be found at \url(https://github.com/ZacKeskin/). Synthetic data can be generated using the functions in the PyCausality package within test utils, in Time\_Series\_Generate.py.}
+
+  \competing{There are no competing interests.}
+
+  \aucontribute{ZK wrote the code, and drafted the first version of the paper. TA directed the research proposing the methodologies and applications. Both authors contributed equally to the final draft of the paper.}
+
+  \ack{The authors acknowledge Th\'arsis Souza in advising on the method of testing for linear Granger causality, with thanks along with Yuqing Long, whose data collation and wrangling was a great help. Finally, we thank PsychSignal for providing their market sentiment data for this academic study.}
 
   \funding{TA acknowledges support from ESRC (ES/K002309/1),  EPSRC (EP/P031730/1) and EC (H2020-ICT-2018-2 Fin-Tech 825215).}
   
-  \ack{The authors acknowledge Th\'arsis Souza in advising on the method of testing for linear Granger causality, with thanks along with Yuqing Long, whose data collation and wrangling was a great help. Finally, a great debt of thanks is to PsychSignal for providing their market sentiment data for this academic study.}
 
 %%%%%%%%%% Bibliography  %%%%%%%%%%%%%%
 
